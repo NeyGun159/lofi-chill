@@ -1,0 +1,243 @@
+body{
+    font-family: 'Poppins', sans-serif;
+}
+:root{
+    --player-control-width-: 300px;
+    --player-control-height-: 50px;
+}
+p{
+    margin: 0;
+}
+.app{
+    overflow: hidden;
+    height: 100vh;
+}
+.lofi__background{
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.change__animation{
+    /* display: none; */
+    z-index: -1;
+    position: absolute;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.player__control{
+    position: fixed;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--player-control-height-);
+    width: var(--player-control-width-);
+    bottom: 0;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    transform: translateX(-50%);
+    z-index: 1000000000;
+    cursor: pointer;
+}
+.player__control-icon{
+    display: block;
+    font-size: 26px;
+    color: #fff;
+}
+.change__background{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    padding: 30px;
+    left: 0;
+    transform: translateX(var(--player-control-width-));
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 4px;
+    margin-left: 20px;
+    margin-bottom: var(--player-control-height-);
+    display: none;
+    opacity: 0;
+    cursor: default;
+}
+.change__background-img{
+    height: 100px;
+    cursor: pointer;
+}
+.change__background-close{
+    height: 30px;
+    width: 30px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    color: #fff;
+    cursor: pointer;
+}
+.change__background-close i:hover{
+    color: red;
+}
+.change__background.active{
+    display: grid;
+    opacity: 1;
+}
+.hidden{
+    display: none;
+}
+.nav__list{
+    padding: 0;
+    margin: 0;
+    position: fixed;
+    top: 15%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    z-index: 3;
+}
+.nav__list-item{
+    position: relative;
+    height: 46px;
+    width: 46px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border: 2px solid #000;
+    color: #000;
+    font-size: 26px;
+    line-height: 50px;
+    text-align: center;
+    cursor: pointer;
+    list-style: none;
+    transition: all .3s ease;
+}
+.nav__list-item:hover i{
+    display: none;
+}
+.nav__list-item:hover .nav__list-icon-open{
+    display: block;
+    line-height: 48px;
+}
+.nav__list-icon-open, .nav__list-icon-close{
+    display: none;
+}
+.widget{
+    width: 400px;
+    min-height: 100%;
+    position: absolute;
+    background-color: rgb(40, 40, 40);
+    z-index: 3;
+    top: 0;
+    left: 0;
+    transform: translateX(-400px);
+    transition: all .3s ease;
+    color: #fff;
+}
+.widget-music.active{
+    transform: translateX(0);
+}
+.nav__list-music.active{
+    transform: translateX(400px);
+}
+.nav__list-item.active:hover .nav__list-icon-close{
+    display: block;
+    line-height: 48px;
+}
+.nav__list-item.active .nav__list-icon-open{
+    display: none!important;
+}
+.widget-timer.active{
+    transform: translateX(0);
+}
+.nav__list-timer.active{
+    transform: translateX(400px);
+}
+.widget-check.active{
+    transform: translateX(0);
+}
+.nav__list-check.active{
+    transform: translateX(400px);
+}
+.widget__header{
+    line-height: 50px;
+    width: 100%;
+    text-align: center;
+    height: 50px;
+    text-transform: uppercase;
+    font-size: 18px;
+    border-bottom: 1px solid #ccc;
+    -webkit-user-select: none;
+}
+.timer{
+    padding: 10px 10px;
+    color: #fff;
+    height: 100%;
+}
+.timer__state{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.timer__countdown{
+    font-size: 54px;
+    -webkit-user-select: none;
+}
+.timer__actions{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.timer__start, .timer__pause{
+    padding: 6px 30px;
+    border: 1.5px solid #4e4e4e;
+    border-radius: 12px;
+    font-size: 16px;
+    -webkit-user-select: none;
+    cursor: pointer;
+    display: none;
+}
+.timer__reset{
+    padding-left: 10px;
+}
+.timer__reset i{
+    font-size: 24px;
+    padding: 0 5px;
+    cursor: pointer;
+}
+.timer__start.active, .timer__pause.active{
+    display: block;
+}
+.timer__selections{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.timer__option{
+    font-size: 16px;
+    color: #fff;
+    padding: 6px 0;
+}
+.timer__option.active{
+    border-bottom: 2px solid #ccc;
+}
+.todo-list{
+    padding: 10px 10px;
+}
+.new__task{
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    background-color: rgb(135, 59, 156);
+    transform: translate(-50%, 50%);
+    border-radius: 22px;
+    padding: 6px 10px;
+    cursor: pointer;
+}

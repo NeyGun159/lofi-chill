@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOFI-CHILL</title>
+    <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
+    <link rel="stylesheet" href="./assets/font/fontawesome-free-6.0.0-web/css/all.min.css">
+    <link rel="stylesheet" href="https:cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https:fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https:cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="./assets/js/change__background.js"></script>
+    <script src="./assets/js/nav.js"></script>
+    <script src="./assets/js/timer.js"></script>
+</head>
+<body>
+    <div class="app">
+        <div class="lofi">
+            <video src="./assets/img/static.mp4" class="change__animation" controls id="video1"></video>
+            <video src="./assets/img/lofi-image-2.mp4" class="lofi__background" autoplay muted loop></video>
+            <ul class="player__control">
+                <li class="player__control-icon">
+                    <i class="fa-solid fa-shuffle"></i>
+                </li>
+                <li class="player__control-icon">
+                    <i class="fa-solid fa-backward"></i>
+                </li>
+                <li class="player__control-icon">
+                    <i class="fa-solid fa-pause"></i>
+                    <!-- <i class="fa-solid fa-play"></i> -->
+                </li>
+                <li class="player__control-icon">
+                    <i class="fa-solid fa-forward"></i>
+                </li>
+                <li class="player__control-icon change__background-icon">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </li>
+                <div class="change__background">
+                    <video class="change__background-img" src="./assets/img/lofi-image.mp4" autoplay muted loop disablepictureinpicture></video>
+                    <video class="change__background-img" src="./assets/img/lofi-image-1.mp4" autoplay muted loop disablepictureinpicture></video>
+                    <video class="change__background-img" src="./assets/img/lofi-image-2.mp4" autoplay muted loop disablepictureinpicture></video>
+                    <video class="change__background-img" src="./assets/img/lofi-image-3.mp4" autoplay muted loop disablepictureinpicture></video>
+                    <video class="change__background-img" src="./assets/img/lofi-image-4.mp4" autoplay muted loop disablepictureinpicture></video>
+                    <div class="change__background-icon change__background-close">
+                        <i class="fa-solid fa-xmark"></i>
+                    </div>
+                </div>
+            </ul>
+            <ul class="nav__list">
+                <div class="widget widget-music">
+                    <div class="widget__header">Music List</div>
+                    <div class="widget__content">
+                        <button type="submit" id="btn"></button>
+                    </div>
+                </div>
+                <li class="nav__list-item nav__list-music">
+                    <i class="ti-music"></i>
+                    <i class="ti-arrow-right nav__list-icon-open"></i>
+                    <i class="ti-arrow-left nav__list-icon-close"></i>
+                </li>
+                <div class="widget widget-timer">
+                    <div class="widget__header">Timer</div>
+                    <div class="widget__content">
+                        <div class="timer">
+                            <div class="timer__state">
+                                <span class="timer__countdown" id="countdown"></span>
+                                <div class="timer__actions">
+                                    <div class="timer__start">
+                                        <p>Start</p>
+                                    </div>
+                                    <div class="timer__pause">
+                                        <p>Pause</p>
+                                    </div>
+                                    <div class="timer__reset">
+                                        <i class="fa-solid fa-rotate-right"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="timer__selections">
+                                <div class="timer__option active pomodoro">
+                                    <span>Pomodoro</span>
+                                </div>
+                                <div class="timer__option short-break">
+                                    <span>Short Break</span>
+                                </div>
+                                <div class="timer__option long-break">
+                                    <span>Long Break</span>
+                                </div>
+                                <div class="timer__gear">
+                                    <span>
+                                        <i class="fa-solid fa-gear"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+                <li class="nav__list-item nav__list-timer">
+                    <i class="ti-timer"></i>
+                    <i class="ti-arrow-right nav__list-icon-open"></i>
+                    <i class="ti-arrow-left nav__list-icon-close"></i>
+                </li>
+                <div class="widget widget-check">
+                    <div class="widget__header">todo list</div>
+                    <div class="widget__content">
+                        <div class="todo-list">
+
+                            <div class="new__task">
+                                <i class="fa-solid fa-plus"></i>
+                                <span>New Task</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <li class="nav__list-item nav__list-check">
+                    <i class="ti-check-box"></i>
+                    <i class="ti-arrow-right nav__list-icon-open"></i>
+                    <i class="ti-arrow-left nav__list-icon-close"></i>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
