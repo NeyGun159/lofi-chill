@@ -5,54 +5,88 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LOFI-CHILL</title>
+    <link rel="shortcut icon" href="./assets/img/logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="./assets/font/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="./assets/font/fontawesome-free-6.0.0-web/css/all.min.css">
+    <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.1.2/css/all.css?fbclid=IwAR0-2y6v8qQvP2AzjmDdF9iQSDLgngStW1FQ7ke6ynggdGDrGAaScIkOJL4">
     <link rel="stylesheet" href="https:cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https:fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
-    <script src="https:cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <script src="./assets/js/change__background.js"></script>
-    <script src="./assets/js/nav.js"></script>
-    <script src="./assets/js/timer.js"></script>
 </head>
 <body>
     <div class="app">
         <div class="lofi">
-            <video src="./assets/img/static.mp4" class="change__animation" controls id="video1"></video>
-            <video src="./assets/img/lofi-image-2.mp4" class="lofi__background" autoplay muted loop></video>
-            <ul class="player__control">
-                <li class="player__control-icon">
-                    <i class="fa-solid fa-shuffle"></i>
-                </li>
-                <li class="player__control-icon">
-                    <i class="fa-solid fa-backward"></i>
-                </li>
-                <li class="player__control-icon">
-                    <i class="fa-solid fa-pause"></i>
-                    <!-- <i class="fa-solid fa-play"></i> -->
-                </li>
-                <li class="player__control-icon">
-                    <i class="fa-solid fa-forward"></i>
-                </li>
-                <li class="player__control-icon change__background-icon">
-                    <i class="fa-solid fa-ellipsis"></i>
-                </li>
-                <div class="change__background">
-                    <video class="change__background-img" src="./assets/img/lofi-image.mp4" autoplay muted loop disablepictureinpicture></video>
-                    <video class="change__background-img" src="./assets/img/lofi-image-1.mp4" autoplay muted loop disablepictureinpicture></video>
-                    <video class="change__background-img" src="./assets/img/lofi-image-2.mp4" autoplay muted loop disablepictureinpicture></video>
-                    <video class="change__background-img" src="./assets/img/lofi-image-3.mp4" autoplay muted loop disablepictureinpicture></video>
-                    <video class="change__background-img" src="./assets/img/lofi-image-4.mp4" autoplay muted loop disablepictureinpicture></video>
-                    <div class="change__background-icon change__background-close">
-                        <i class="fa-solid fa-xmark"></i>
+            <video src="./assets/img/Exterior Sunny Day.mp4" class="lofi__background" id="lofi__background-id" autoplay muted loop disablepictureinpicture></video>
+            <video src="./assets/img/static.mp4" class="change__animation" loop></video>
+            <audio src="./assets/music/radio.mp3" class="change__animation-radio"></audio>
+            <div class="player__control-wrapper">
+                <input type="range" class="volume-change" value="100" step="1" min="0" max="100">
+                <ul class="player__control">
+                    <li class="player__control-icon volume-btn">
+                        <i class="fa-solid fa-volume-xmark volume-icon volume-off"></i>
+                        <i class="fa-solid fa-volume-low volume-icon volume-low"></i>
+                        <i class="fa-solid fa-volume volume-icon volume-default"></i>
+                        <i class="fa-solid fa-volume-high volume-icon volume-high active"></i>
+                    </li>
+                    <li class="player__control-icon random-btn">
+                        <i class="fa-solid fa-shuffle"></i>
+                    </li>
+                    <li class="player__control-icon pre-btn">
+                        <i class="fa-solid fa-backward"></i>
+                    </li>
+                    <li class="player__control-icon play-btn">
+                        <i class="fa-solid fa-pause pause"></i>
+                        <i class="fa-solid fa-play play"></i>
+                    </li>
+                    <li class="player__control-icon next-btn">
+                        <i class="fa-solid fa-forward"></i>
+                    </li>
+                    <li class="player__control-icon repeat-btn">
+                        <i class="fa-solid fa-rotate-left"></i>
+                    </li>
+                    <li class="player__control-icon change__background-icon" id="change__background-icon-id">
+                        <i class="fa-solid fa-ellipsis"></i>
+                    </li>
+                    <div class="change__background" id="change__background-id">
+                        <video class="change__background-img" src="./assets/img/Exterior Sunny Day.mp4" autoplay muted loop disablepictureinpicture></video>
+                        <video class="change__background-img" src="./assets/img/Bedroom Sunny Day.mp4" autoplay muted loop disablepictureinpicture></video>
+                        <video class="change__background-img" src="./assets/img/lofi-image.mp4" autoplay muted loop disablepictureinpicture></video>
+                        <video class="change__background-img" src="./assets/img/lofi-image-1.mp4" autoplay muted loop disablepictureinpicture></video>
+                        <video class="change__background-img" src="./assets/img/lofi-image-2.mp4" autoplay muted loop disablepictureinpicture></video>
+                        <video class="change__background-img" src="./assets/img/lofi-image-3.mp4" autoplay muted loop disablepictureinpicture></video>
+                        <video class="change__background-img" src="./assets/img/lofi-image-4.mp4" autoplay muted loop disablepictureinpicture></video>
+                        <div class="change__background-close" id="change__background-close-id">
+                            <i class="fa-solid fa-xmark"></i>
+                        </div>
                     </div>
-                </div>
-            </ul>
+                </ul>
+                <input type="range" class="progress" value="0" step="1" min="0" max="100"></input>
+            </div>
             <ul class="nav__list">
                 <div class="widget widget-music">
                     <div class="widget__header">Music List</div>
                     <div class="widget__content">
-                        <button type="submit" id="btn"></button>
+                        <div class="music">
+                            <div class="music__wrapper-usuk">
+                                 <span>US/UK</span>                           
+                                <ul class="music__list music__list-one">
+                                    <li class="music__list-item usuk-single active">Single Song</li>
+                                    <li class="music__list-item usuk-playlist">Available Playlist</li>
+                                </ul>
+                            </div>
+                            <div class="music__wrapper-vn">
+                                <span>Việt Nam</span>
+                                <ul class="music__list music__list-two">
+                                    <li class="music__list-item vn-single">Single Song</li>
+                                    <li class="music__list-item vn-playlist">Available Playlist</li>
+                                  </ul>
+                            </div>
+                            <div class="music__add-icon">
+                                <i class="fa-solid fa-plus"></i>
+                            </div>
+                        </div>
+                        <div class="playlist">
+                        </div>
+                        <audio src="" id="audio"></audio>
                     </div>
                 </div>
                 <li class="nav__list-item nav__list-music">
@@ -60,26 +94,23 @@
                     <i class="ti-arrow-right nav__list-icon-open"></i>
                     <i class="ti-arrow-left nav__list-icon-close"></i>
                 </li>
-                <div class="widget widget-timer">
+                <div class="widget widget-timer" id="widget-timer-id">
                     <div class="widget__header">Timer</div>
                     <div class="widget__content">
                         <div class="timer">
                             <div class="timer__state">
-                                <span class="timer__countdown" id="countdown"></span>
+                                <span class="timer__countdown" id="countdown">00:00</span>
                                 <div class="timer__actions">
-                                    <div class="timer__start">
+                                    <div class="timer__start active">
                                         <p>Start</p>
                                     </div>
                                     <div class="timer__pause">
                                         <p>Pause</p>
                                     </div>
-                                    <div class="timer__reset">
-                                        <i class="fa-solid fa-rotate-right"></i>
-                                    </div>
                                 </div>
                             </div>
                             <div class="timer__selections">
-                                <div class="timer__option active pomodoro">
+                                <div class="timer__option pomodoro">
                                     <span>Pomodoro</span>
                                 </div>
                                 <div class="timer__option short-break">
@@ -94,7 +125,24 @@
                                     </span>
                                 </div>
                             </div>
+                            <div class="timer__value">
+                                <div class="timer__value-wrapper">
+                                    <div class="timer__value-item">
+                                        <span>Pomodoro</span>
+                                        <input type="number" class="timer__value-input" min="1" max="369" value="25" id="timer__value-pomodoro">
+                                    </div>
+                                    <div class="timer__value-item">
+                                        <span>Short Break</span>
+                                        <input type="number" class="timer__value-input" min="1" max="369" value="5" id="timer__value-short-break">
+                                    </div>
+                                    <div class="timer__value-item">
+                                        <span>Long Break</span>
+                                        <input type="number" class="timer__value-input" min="1" max="369" value="15" id="timer__value-long-break">
+                                    </div>
+                                </div>
+                                <div class="timer__value-save">Save</div>
                             </div>
+                        </div>
                     </div>
                 </div>
                 <li class="nav__list-item nav__list-timer">
@@ -106,11 +154,18 @@
                     <div class="widget__header">todo list</div>
                     <div class="widget__content">
                         <div class="todo-list">
-
-                            <div class="new__task">
-                                <i class="fa-solid fa-plus"></i>
-                                <span>New Task</span>
-                            </div>
+                            <form class="task__input">
+                                <input type="text" class="task__input-field">
+                                <button class="task__input-btn">
+                                    <i class="fa-solid fa-plus task__input-add"></i>
+                                </button>
+                            </form>
+                            <ul class="task__list"></ul>
+                            
+                        </div>
+                        <div class="new__task">
+                            <i class="fa-solid fa-plus"></i>
+                            <span>New Task</span>
                         </div>
                     </div>
                 </div>
@@ -120,7 +175,81 @@
                     <i class="ti-arrow-left nav__list-icon-close"></i>
                 </li>
             </ul>
+            <div class="music__add">
+                <div class="music__add-overlay"></div>
+                <div class="music__add-body">
+                    <!-- <div class="music__add-method">
+                        <div class="music__add-method-file active">
+                            <span>File</span>
+                        </div>
+                        <div class="music__add-method-url">
+                            <span>YouTube URL</span>
+                        </div>
+                    </div> -->
+                    <form class="music__add-file">
+                        <div class="music__add-file-area">
+                            <div class="music__add-file-img" style="background-image: url(./assets/img/upload-file-img.png);"></div>
+                            <h3 class="music__add-file-message">Drag & drop any file here</h3>
+                            <label class="label">
+                                or
+                                <input type="file" class="music__add-file-input" multiple="multiple" accept="audio/*">
+                                <span class="music__add-file-text">
+                                    browse file
+                                    <span>from device</span>
+                                </span>
+                            </label>
+                        </div>
+                        <div class="file__list">
+                            <!-- <div class="file-block">
+                                <div class="file-info">
+                                    <i class="fa-solid fa-file-audio file-audio"></i>
+                                    <span class="file-name">radio.mp3</span> | <span class="file-size">56.8 KB</span>
+                                </div>
+                                <i class="fa-solid fa-trash file-remove"></i>
+                            </div>
+                            <div class="music__add-file-selector">
+                                <div>
+                                    <label for="national">National:</label>
+                                    <select name="national" class="national">
+                                        <option value="usuk">US/UK</option>
+                                        <option value="vn">Việt Nam</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label for="local">Song or playlist:</label>
+                                    <select name="local" class="local">
+                                        <option value="song">Song</option>
+                                        <option value="playlist">Playlist</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    Name:
+                                    <input type="text" class="song-name">
+                                </div>
+                                <div>
+                                    Author:
+                                    <input type="text" class="song-author">
+                                </div>
+                            </div> -->
+                        </div>
+                        <button class="music__add-file-btn">Upload</button>
+                    </form>
+                    <div class="music__add-file-close">
+                        <i class="fa-solid fa-xmark music__add-file-close-icon"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="popover__action"></div>
+            <audio src="./assets/music/rain.mp3" class="rain-sound" loop></audio>
+            <audio src="./assets/music/traffic.mp3" class="traffic-sound" loop></audio>
+            <audio src="./assets/music/keyboard.mp3" class="keyboard-sound" loop></audio>
         </div>
     </div>
 </body>
+<script src="./assets/js/change__background.js"></script>
+<script src="./assets/js/nav.js"></script>
+<script src="./assets/js/todo-list.js"></script>
+<script src="./assets/js/timer.js"></script>
+<script src="./assets/js/playlist.js"></script>
 </html>
+
